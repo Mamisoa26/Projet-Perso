@@ -10,11 +10,11 @@ const exerciseSchema = mongoose.Schema({
         required: true
     },
     duration: {
-        type: Number,
+        type: String,
         required: true
     },
     date: {
-        type: Number,
+        type: String,
         required: true
     }
 }, {
@@ -23,7 +23,7 @@ const exerciseSchema = mongoose.Schema({
 
 // const Exercise = mongoose.model('Exercise', exerciseSchema);
 // module.exports = Exercise;
- module.exports=mongoose.model('exercice', exerciseSchema)
+ module.exports=mongoose.model('exercise', exerciseSchema)
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);

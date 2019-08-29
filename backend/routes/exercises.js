@@ -33,7 +33,9 @@ router.route('/add').post((req, res) => {
            date: date,
         });
         newExercise.save()
-            .then(() => res.json('Successfull'))
+            .then((re) => {res.json('Successfull')
+        console.log('exercises', re);
+        })
             .catch(err => res.status(400).json('Error: ' + err))
     }); 
     })
@@ -51,7 +53,7 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
-router.route('/update/:id').post((req, res) => {
+router.route('/update/:id').put((req, res) => {
     Exercise.findById(req.params.id)
         .then(exercise => {
             exercise.username = req.body.username;
